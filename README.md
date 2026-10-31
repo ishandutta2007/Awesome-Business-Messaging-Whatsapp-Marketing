@@ -133,9 +133,9 @@ The open-source WhatsApp ecosystem divides into:
 2. **Official Cloud API Wrappers & BSP Microservices**: Frameworks built on official Meta Graph APIs requiring Meta Business Manager approval. 🛡️
 3. **Omnichannel Inboxes & Workflow Orchestrators**: Full customer engagement suites that plug into WhatsApp gateways. 🔄
 
-The table below is sorted in descending order by **GitHub Star Count**:
+The table below is sorted in descending order by **GitHub Stars_Count**:
 
-| 📦 Project | ⭐ GitHub Stars | 📜 License | 🛠️ Primary Tech Stack | 🧩 Architectural Role |
+| 📦 Project | ⭐ GitHub_Stars | 📜 License | 🛠️ Primary Tech Stack | 🧩 Architectural Role |
 | :--- | :--- | :--- | :--- | :--- |
 | **[n8n](https://github.com/n8n-io/n8n)** | [![n8n Stars](https://img.shields.io/github/stars/n8n-io/n8n?style=social&color=white)](https://github.com/n8n-io/n8n/stargazers) | Sustainable (Fair-code) | TypeScript, Node.js | Workflow automation engine with native WhatsApp Cloud API nodes & community packages |
 | **[Chatwoot](https://github.com/chatwoot/chatwoot)** | [![Chatwoot Stars](https://img.shields.io/github/stars/chatwoot/chatwoot?style=social&color=white)](https://github.com/chatwoot/chatwoot/stargazers) | MIT | Ruby on Rails, Vue.js | Self-hosted omnichannel customer engagement inbox connecting to WhatsApp Cloud API & Evolution API |
@@ -261,7 +261,7 @@ Contributions, corrections, and new entries are welcome! 🎉
 
 1. Fork this repository.
 2. Ensure new SaaS listings include accurate starting tier pricing and specific free trial / free tier limits.
-3. Ensure new Open-Source listings include a GitHub stars badge (`style=social&color=white`) linking to the stargazers page.
+3. Ensure new Open-Source listings include a GitHub_Stars_Badge (`style=social&color=white`) linking to the stargazers page.
 4. Open a Pull Request detailing the added tools and verification sources.
 
 ---
