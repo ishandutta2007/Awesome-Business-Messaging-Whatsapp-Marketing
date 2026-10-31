@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c14" />
+      <stop offset="50%" stop-color="#0b1526" />
+      <stop offset="100%" stop-color="#050a12" />
+    </linearGradient>
+
+    <!-- Emerald Glow -->
+    <radialGradient id="emerald-glow" cx="20%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#25D366" stop-opacity="0.32" />
+      <stop offset="60%" stop-color="#128C7E" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#070c14" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Cyan/Blue Glow -->
+    <radialGradient id="blue-glow" cx="80%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#00A884" stop-opacity="0.28" />
+      <stop offset="60%" stop-color="#0284c7" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#070c14" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Badge/Pill Gradients -->
+    <linearGradient id="pill-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#102a27" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0d2138" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="pill-border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#25D366" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#00A884" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#25D366" stroke-width="0.75" stroke-opacity="0.07" />
+      <circle cx="40" cy="40" r="1.5" fill="#25D366" fill-opacity="0.12" />
+    </pattern>
+
+    <style>
+      .glow-pulse {
+        animation: pulseGlow 6s ease-in-out infinite alternate;
+      }
+      .node-flow {
+        animation: dashMove 14s linear infinite;
+      }
+      .particle-float-1 {
+        animation: float1 7s ease-in-out infinite alternate;
+      }
+      .particle-float-2 {
+        animation: float2 9s ease-in-out infinite alternate;
+      }
+      .particle-float-3 {
+        animation: float3 11s ease-in-out infinite alternate;
+      }
+      .signal-wave {
+        animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+        transform-origin: 980px 180px;
+      }
+
+      @keyframes pulseGlow {
+        0% { opacity: 0.6; transform: scale(0.98); }
+        100% { opacity: 1; transform: scale(1.02); }
+      }
+      @keyframes dashMove {
+        to { stroke-dashoffset: -120; }
+      }
+      @keyframes float1 {
+        0% { transform: translateY(0px) translateX(0px); }
+        100% { transform: translateY(-16px) translateX(8px); }
+      }
+      @keyframes float2 {
+        0% { transform: translateY(0px) translateX(0px); }
+        100% { transform: translateY(18px) translateX(-10px); }
+      }
+      @keyframes float3 {
+        0% { transform: translateY(0px) scale(0.9); }
+        100% { transform: translateY(-22px) scale(1.1); }
+      }
+      @keyframes ping {
+        0% { transform: scale(0.7); opacity: 0.8; }
+        80%, 100% { transform: scale(1.9); opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="420" fill="url(#bg-grad)" rx="16" />
+  <rect width="1200" height="420" fill="url(#grid)" rx="16" />
+
+  <!-- Ambient Dynamic Glowing Orbs (Behind content) -->
+  <g class="glow-pulse" style="transform-origin: center;">
+    <circle cx="240" cy="180" r="280" fill="url(#emerald-glow)" />
+    <circle cx="960" cy="220" r="300" fill="url(#blue-glow)" />
+  </g>
+
+  <!-- Flowing Network Visual Elements in Background Right -->
+  <g opacity="0.35">
+    <path class="node-flow" d="M 850 110 C 920 110, 960 170, 1020 170 S 1100 230, 1150 230" 
+          fill="none" stroke="#25D366" stroke-width="2.5" stroke-dasharray="8 6" />
+    <path class="node-flow" d="M 820 280 C 890 280, 930 200, 1000 200 S 1080 130, 1140 130" 
+          fill="none" stroke="#00A884" stroke-width="2" stroke-dasharray="6 6" style="animation-direction: reverse;" />
+    <path class="node-flow" d="M 880 340 C 940 340, 980 290, 1040 290 S 1110 320, 1160 320" 
+          fill="none" stroke="#34D399" stroke-width="1.8" stroke-dasharray="5 5" />
+
+    <!-- Pulsing Signal Nodes -->
+    <circle class="signal-wave" cx="980" cy="180" r="24" fill="none" stroke="#25D366" stroke-width="1.5" />
+    <circle cx="980" cy="180" r="7" fill="#25D366" />
+    
+    <circle cx="1070" cy="220" r="5" fill="#00A884" />
+    <circle cx="890" cy="190" r="6" fill="#34D399" />
+    <circle cx="1040" cy="290" r="5.5" fill="#25D366" />
+    <circle cx="850" cy="110" r="4.5" fill="#10B981" />
+  </g>
+
+  <!-- Subtle Floating Accent Dots -->
+  <circle class="particle-float-1" cx="220" cy="70" r="4" fill="#25D366" opacity="0.6" />
+  <circle class="particle-float-2" cx="150" cy="350" r="3.5" fill="#00A884" opacity="0.5" />
+  <circle class="particle-float-3" cx="620" cy="65" r="3" fill="#34D399" opacity="0.6" />
+  <circle class="particle-float-1" cx="720" cy="360" r="4.5" fill="#10B981" opacity="0.4" />
+  <circle class="particle-float-2" cx="1110" cy="80" r="3" fill="#25D366" opacity="0.5" />
+
+  <!-- FOREGROUND CONTENT: Header Category Tag -->
+  <g transform="translate(80, 52)">
+    <rect width="320" height="34" rx="17" fill="url(#pill-bg)" stroke="url(#pill-border)" stroke-width="1.2" />
+    <circle cx="20" cy="17" r="5" fill="#25D366">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="36" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="12" font-weight="700" fill="#25D366" letter-spacing="1.5">CURATED AWESOME ECOSYSTEM</text>
+  </g>
+
+  <!-- FOREGROUND CONTENT: Main Title & Subtitle -->
+  <!-- WhatsApp Business Logo Icon Symbol -->
+  <g transform="translate(80, 108)">
+    <rect width="64" height="64" rx="16" fill="#25D366" />
+    <path d="M 32 14 C 22.06 14 14 22.06 14 32 C 14 35.18 14.83 38.16 16.27 40.76 L 14.78 47.22 L 21.43 45.76 C 24.49 47.37 28.14 48.3 32 48.3 C 41.94 48.3 50 40.24 50 30.3 C 50 20.36 41.94 14 32 14 Z M 41.13 39.46 C 40.75 40.52 39.24 41.45 38.35 41.56 C 37.49 41.67 36.38 41.73 32.74 40.22 C 28.09 38.29 25.09 33.58 24.86 33.27 C 24.63 32.96 23 30.79 23 28.55 C 23 26.31 24.14 25.22 24.6 24.75 C 24.99 24.35 25.63 24.17 26.24 24.17 C 26.44 24.17 26.62 24.18 26.78 24.19 C 27.24 24.21 27.47 24.24 27.78 24.97 C 28.16 25.88 29.08 28.14 29.2 28.37 C 29.31 28.6 29.43 28.91 29.27 29.21 C 29.12 29.52 29 29.66 28.77 29.93 C 28.54 30.2 28.3 30.41 28.08 30.68 C 27.83 30.97 27.56 31.28 27.84 31.76 C 28.12 32.23 29.08 33.79 30.5 35.05 C 32.33 36.68 33.82 37.2 34.35 37.42 C 34.74 37.58 35.2 37.54 35.48 37.24 C 35.84 36.85 36.29 36.2 36.74 35.56 C 37.06 35.1 37.46 35.04 37.89 35.2 C 38.32 35.35 40.61 36.48 41.08 36.71 C 41.54 36.94 41.85 37.05 41.97 37.25 C 42.08 37.46 42.08 38.4 41.13 39.46 Z" fill="#ffffff" />
+  </g>
+
+  <g transform="translate(162, 126)">
+    <text font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif" 
+          font-size="34" font-weight="800" fill="#ffffff" letter-spacing="-0.5">
+      Awesome Business Messaging
+    </text>
+    <text y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif" 
+          font-size="34" font-weight="800" fill="#25D366" letter-spacing="-0.5">
+      &amp; WhatsApp Marketing
+    </text>
+  </g>
+
+  <!-- Tagline / Subtitle (Always in foreground, high contrast) -->
+  <text x="82" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+        font-size="16.5" font-weight="400" fill="#94A3B8" letter-spacing="0.2">
+    Enterprise Cloud API BSPs • Self-Hosted Gateways • Omnichannel Shared Inboxes • Conversational Commerce
+  </text>
+
+  <!-- Dynamic Feature Badges / Highlights (Foreground) -->
+  <g transform="translate(80, 275)">
+    <!-- Pill 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="180" height="42" rx="10" fill="#111c2d" stroke="#1e293b" stroke-width="1.2" />
+      <circle cx="22" cy="21" r="4" fill="#22c55e" />
+      <text x="36" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+            font-size="13.5" font-weight="600" fill="#e2e8f0">Official Meta BSPs</text>
+    </g>
+
+    <!-- Pill 2 -->
+    <g transform="translate(195, 0)">
+      <rect width="185" height="42" rx="10" fill="#111c2d" stroke="#1e293b" stroke-width="1.2" />
+      <circle cx="22" cy="21" r="4" fill="#38bdf8" />
+      <text x="36" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+            font-size="13.5" font-weight="600" fill="#e2e8f0">Open-Source Stacks</text>
+    </g>
+
+    <!-- Pill 3 -->
+    <g transform="translate(395, 0)">
+      <rect width="210" height="42" rx="10" fill="#111c2d" stroke="#1e293b" stroke-width="1.2" />
+      <circle cx="22" cy="21" r="4" fill="#a855f7" />
+      <text x="36" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+            font-size="13.5" font-weight="600" fill="#e2e8f0">Marketing Automation</text>
+    </g>
+
+    <!-- Pill 4 -->
+    <g transform="translate(620, 0)">
+      <rect width="190" height="42" rx="10" fill="#111c2d" stroke="#1e293b" stroke-width="1.2" />
+      <circle cx="22" cy="21" r="4" fill="#f59e0b" />
+      <text x="36" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+            font-size="13.5" font-weight="600" fill="#e2e8f0">Transparent Pricing</text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Line -->
+  <rect x="0" y="416" width="1200" height="4" fill="#25D366" opacity="0.85" />
+</svg>
